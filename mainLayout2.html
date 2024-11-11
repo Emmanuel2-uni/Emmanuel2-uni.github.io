@@ -5,45 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcard Layout</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="header.css">
 </head>
 <body>
     <!-- Header -->
     <div class="header">
-        <a class="active" href="main.html">Flashcard</a>
+        <a class="active" href="#">Flashcard</a>
         <a href="deck.html">My Deck</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Settings</a>
         <a href="#about">About</a>
         <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" class="my-account-image" alt="My Account">
     </div>
 
     <!-- Main Body -->
     <!-- First column  -->
-    <div class="container my-5">
+    <div class="container my-3">
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="card h-100 shadow">
-                    <button class="card-body d-flex align-items-center justify-content-center button create-deck" onclick="addDeck()">             
+                    <div class="card-body d-flex align-items-center justify-content-center create-deck">             
                         <h2 class="text-center">My Deck</h2>
-                    </button>
+                    </div>
                 </div>
             </div>
 
             <!-- Second Column  -->
-            <div class="col-md-6">
+            <div class="col-md-6 my-column-2">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 p-0">
                         <div class="card h-100 shadow">
                             <button class="card-body d-flex align-items-center justify-content-center button my-account">
-                                <h2 class="text-center">Create Deck</h2>
+                                <h2 class="text-center">Add Deck</h2>
                             </button>
                         </div>
                     </div>
-                    <div class="col-12 gy-4">
-                        <div class="card h-100 shadow">
+                    <div class="col-12 gy-4 p-0">
+                        <div class="card h-100 w-100 shadow">
                             <button class="card-body d-flex align-items-center justify-content-center button tutorial">
-                                <h2 class="text-center">Tutorial</h2>
+                                <h2 class="text-center">[Placeholder]</h2>
                             </button>
                         </div>
                     </div>

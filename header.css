@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #7faecf;
+    font-weight: 100;
+}
+
+.header a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.header a:hover {
+    background-color: #5d7f97;
+  }
+  
+.header a.active {
+    background-color: #0e6090;
+    color: white;
+  }
+
+.footer { 
+    position: absolute; 
+    bottom: 1vh; 
+    right: 1vh; 
+    z-index: 10;
+}
+
+.my-account-image {
+    right: 100px;
+    width: 60px;
+    right: 0;
+    padding-top: 7.5px;
+    display: block;
+}
+

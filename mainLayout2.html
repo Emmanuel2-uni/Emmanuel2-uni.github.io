@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a class="active" href="main.html">Flashcard</a>
+        <a href="deck.html">My Deck</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" class="my-account-image" alt="My Account">
+    </div>
+
+    <!-- Main Body -->
+    <!-- First column  -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 shadow">
+                    <button class="card-body d-flex align-items-center justify-content-center button create-deck" onclick="addDeck()">             
+                        <h2 class="text-center">My Deck</h2>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Second Column  -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card h-100 shadow">
+                            <button class="card-body d-flex align-items-center justify-content-center button my-account">
+                                <h2 class="text-center">Create Deck</h2>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 gy-4">
+                        <div class="card h-100 shadow">
+                            <button class="card-body d-flex align-items-center justify-content-center button tutorial">
+                                <h2 class="text-center">Tutorial</h2>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Footer
+    </div>
+    
+    <script src="mainLayout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -7,22 +7,22 @@ body {
     background-color: #7faecf;
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
 }
 
 .header a {
     float: left;
-    color: #f2f2f2;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
   }
 
 @media only screen and (max-width: 600px) {
   .header a {
-    font-size: 3vw;
+    font-size: 15px;
   }
 }
   
@@ -48,5 +48,5 @@ body {
     right: 0;
     padding-top: 7.5px;
     display: block;
+    position: absolute;
 }
-

@@ -1,0 +1,78 @@
+/* .container {
+    transition: filter 1s ease-out 0ms;
+    filter: blur(5px)
+} */
+
+.popup {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 2px 5px 5px rgba(0,0,0,0.1);
+    margin-top: -25px;
+    transition: top 0ms ease-in-out 300ms,
+                opacity 300ms ease-in-out,
+                margin-top 300ms ease-in-out;
+}
+
+.popup > * {
+    margin: 10px 0;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+}
+
+body.active-popup {
+    overflow: hidden;
+}
+
+body.active-popup .container{
+    filter: blur(8px);
+    /* background: rgba(0,0,0,0.08); */
+    transition: filter 750ms ease-in-out 0ms;
+}
+
+body.active-popup .popup{
+    width: 50vw;
+    height: 240px;
+    opacity: 1;
+    margin-top: 0;
+    transition: width 750ms ease-out 0ms,
+                height 750ms ease-out 0ms,
+                opacity 300ms ease-in-out,
+                margin-top 300ms ease-in-out;
+    animation: mymove 0.6s;
+    animation-timing-function: cubic-bezier(0,0,0.4,1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    100% {top: 50%}
+}
+
+.noClick {
+    pointer-events: none;
+ }
+
+ @media only screen and (max-width: 600px) {
+    body.active-popup .popup{
+        width: 90vw;
+    }
+}
+
+.mr-2 {
+    margin-right: 8px;
+}

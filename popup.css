@@ -41,7 +41,6 @@ body.active-popup {
 
 body.active-popup .container{
     filter: blur(8px);
-    /* background: rgba(0,0,0,0.08); */
     transition: filter 750ms ease-in-out 0ms;
 }
 

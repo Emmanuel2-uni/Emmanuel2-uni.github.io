@@ -7,7 +7,7 @@ body {
     background-color: #7faecf;
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -19,12 +19,6 @@ body {
     text-decoration: none;
     font-size: 18px;
   }
-
-@media only screen and (max-width: 600px) {
-  .header a {
-    font-size: 15px;
-  }
-}
   
 .header a:hover {
     background-color: #5d7f97;
@@ -49,4 +43,20 @@ body {
     padding-top: 7.5px;
     display: block;
     position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+    .header a {
+        font-size: 3.5vw;
+    }
+
+    .my-account-image {
+        bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .header a {
+        font-size: 3.8vw;
+    }
 }

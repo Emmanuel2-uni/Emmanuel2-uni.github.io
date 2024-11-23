@@ -85,14 +85,10 @@ function try_getDecks() {
 
 //creates a deck
 function showCreateDeck() {
-
     let deck_name = document.querySelector('.deck-name').value
-    let card_name = document.querySelector('.card-name').value
+    let card_question = document.querySelector('.card-name').value
     let card_answer = document.querySelector('.card-answer').value
-    let deck_id = 0
-    let card_id = 0
-    let form_Deck = {deck_id, card_id, deck_name, card_name, card_answer}
-
+    
     fetch("https://webspec-finals-be.onrender.com/api/decks", {mode: "cors"})
     .then(function(response){
         return response.json();
@@ -112,29 +108,30 @@ function showCreateDeck() {
                 deck_num_id.push(element.deck_id)
                 deck_num_name.push(element.deck_name)
             }  
+            //temp_num -= 1 // safety indexing
         })
+        temp_num += 1; // to add
         console.log(temp_num);
-        temp_num += 1;
-        
-    }).then({
-        method: 'POST',
-        body: JSON.stringify(form_Deck),
-        headers:{
-            'Content-Type': 'application/json'
-        }
+
+        let deck_id = temp_num
+        let card_id = `${deck_id}_1`
+
+        let form_Deck = {deck_id, deck_name, card_id, card_question, card_answer}
+        console.log(form_Deck)
+        add_Deck(form_Deck)
     }).catch((error) => console.log(error))
 
 
-    // Original code by Marc
-    if (deck_name != '' && card_name != '' && card_answer != '')  {
-        decks.push({ deck_name, flashcards: [] });
-        alert(`Deck ${deck_name} created`)
-        document.body.classList.remove('active-popup');
-        document.querySelector('.deck-name').value = ''
-        showDecks();
-    }else {
-        alert(`Please enter all details.`)
-    }
+    // // Original code by Marc
+    // if (deck_name != '' && card_name != '' && card_answer != '')  {
+    //     decks.push({ deck_name, flashcards: [] });
+    //     alert(`Deck ${deck_name} created`)
+    //     document.body.classList.remove('active-popup');
+    //     document.querySelector('.deck-name').value = ''
+    //     showDecks();
+    // }else {
+    //     alert(`Please enter all details.`)
+    // }
 
 
     // submit.addEventListener('click', () => {
@@ -181,7 +178,17 @@ function addCardSim() {
 
 
 }
-
+function add_Deck(deck){
+    console.log(deck)
+    fetch("https://webspec-finals-be.onrender.com/api/decks", {
+        method: 'POST',
+        body: JSON.stringify(deck),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).catch((error) => console.log(error))
+    
+}
 //shows the deck upon opening
 // not possible in this case because of static web
 try_getDecks();

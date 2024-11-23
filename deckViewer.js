@@ -1,6 +1,6 @@
 const test = document.querySelector('.test')
 store_deck_num = sessionStorage.getItem("store_index")
-test.innerHTML = store_deck_num
+test.innerHTML = sessionStorage.getItem("store_index")
 console.log(store_deck_num)
 
 // function show_Deck() {

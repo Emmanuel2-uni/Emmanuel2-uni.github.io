@@ -91,7 +91,8 @@ function showCreateDeck() {
     let deck_name = document.querySelector('.deck-name').value
     let card_question = document.querySelector('.card-name').value
     let card_answer = document.querySelector('.card-answer').value
-    
+
+    if (deck_name != '' && card_name != '' && card_answer != '')  {
     fetch("https://webspec-finals-be.onrender.com/api/decks", {mode: "cors"})
     .then(function(response){
         return response.json();
@@ -123,8 +124,12 @@ function showCreateDeck() {
         console.log(form_Deck)
         add_Deck(form_Deck)
     }).catch((error) => console.log(error))
-
-
+        document.body.classList.remove('active-popup');
+        try_getDecks();
+    }else{
+        alert(`Please enter all details.`)
+    }
+    
     // // Original code by Marc
     // if (deck_name != '' && card_name != '' && card_answer != '')  {
     //     decks.push({ deck_name, flashcards: [] });

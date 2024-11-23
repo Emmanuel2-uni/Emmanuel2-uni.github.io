@@ -1,7 +1,7 @@
 // Where to store deck library/ objects
 let decks = [];
 var deck_list = [];
-
+var store_deck_num;
 // original, frontend static code
 // Show the deck/s function 
 // function showDecks() {
@@ -17,7 +17,10 @@ var deck_list = [];
 // }
 
 
-
+function store_index(index){
+    store_deck_num = index;
+    console.log(store_deck_num + 'ping')
+}
 
 //  modification of the showDecks()
 //  NOTE: Put EVERYTHING inside the .then() functions to prevent async code fuckery
@@ -52,6 +55,7 @@ function try_getDecks() {
         // Original display code made by Marc, modified
         const deckList = document.getElementById('deckList');
         deckList.innerHTML = '';
+
         decks.forEach((deck, index) => {
             console.log("Ping 2")
             const deckDiv = document.createElement('div');
@@ -63,7 +67,6 @@ function try_getDecks() {
                 } 
             deckList.appendChild(deckDiv);
         });
-
 
     }).catch((error) =>{
         console.log(error)
@@ -132,34 +135,6 @@ function showCreateDeck() {
     // }else {
     //     alert(`Please enter all details.`)
     // }
-
-
-    // submit.addEventListener('click', () => {
-    //   let fname = document.querySelector('#fname').value
-    //   let lname = document.querySelector('#lname').value 
-    //   let email = document.querySelector('#email').value
-    //   let gender = document.querySelector('#gender').value
-    
-    //   //object
-    //   //{'fname,: fname, 'lname: dela cruz'}
-    //   let formData = {fname, lname, email, gender}
-
-    //   //console.log(formData)
-    //   //fetch("https://bscs3b-crud-api-yvd4.onrender.com/api/members", {
-    
-    //   fetch('http://localhost:3002/api/members', {
-
-    //     method: 'POST',
-    //     body: JSON.stringify(formData),
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     }
-    //   }).catch((error) => console.log(error))
-    //   alert("Successfully inserted!");  
-    //   location.reload();
-    // //end
-    // })
-
 }
 
 
@@ -178,6 +153,9 @@ function addCardSim() {
 
 
 }
+
+
+// function for adding decks
 function add_Deck(deck){
     console.log(deck)
     fetch("https://webspec-finals-be.onrender.com/api/decks", {
@@ -186,9 +164,25 @@ function add_Deck(deck){
         headers: {
             'Content-Type': 'application/json'
         }
-    }).catch((error) => console.log(error))
-    
+    }).catch((error) => console.log(error))   
 }
-//shows the deck upon opening
-// not possible in this case because of static web
+
+// function for deleting decks
+function delete_Deck(deck){
+    console.log(deck)
+    fetch("https://webspec-finals-be.onrender.com/api/decks", {
+        method: 'DELETE',
+        body: JSON.stringify({deck}),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    }).catch((error) => console.log(error))
+}
+
+function openDeck(index){
+    store_deck_num = index
+    console.log(store_deck_num)
+}
+
+// run
 try_getDecks();

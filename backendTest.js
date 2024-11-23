@@ -48,7 +48,8 @@ function getUsers(){
       
       data.forEach((element)=>{
         //console.log(Math.floor(rand))
-        html += `Deck: ${element.deck_id} || Card: ${element.card_id} 
+        html += `Deck: ${element.deck_id} || ${element.deck_name} 
+        <br> Card: ${element.card_id} 
         <br> Question: ${element.card_question} 
         <br> Answer: ${element.card_answer}
         <br></br>`

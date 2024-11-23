@@ -1,5 +1,5 @@
 const test = document.querySelector('.test')
-store_deck_num = localStorage.getItem("store_index")
+store_deck_num = sessionStorage.getItem("store_index")
 test.innerHTML = store_deck_num
 console.log(store_deck_num)
 

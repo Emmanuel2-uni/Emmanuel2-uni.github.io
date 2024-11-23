@@ -183,6 +183,7 @@ function openDeck(index){
     store_deck_num = index
     console.log(store_deck_num)
     localStorage.setItem("store_index", store_deck_num)
+    console.log(localStorage.getItem("store_index"))
 }
 
 // run

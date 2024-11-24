@@ -38,6 +38,7 @@ function try_getDecks() {
         var temp_num = 0; // for storing numbers
         var deck_num_id = []; // for proper indexing
         var deck_num_name = [];
+        var deck_temp_list = deck_json;
         deck_json.forEach((element) => {
             if(temp_num != element.deck_id){
                 // console.log("ping 2"), check condition fulfillment
@@ -51,7 +52,8 @@ function try_getDecks() {
         console.log(deck_num_id)
         console.log(deck_num_name)
         decks = deck_num_name;
-
+        console.log(deck_temp_list)
+        var temp_index
         // Original display code made by Marc, modified
         const deckList = document.getElementById('deckList');
         deckList.innerHTML = '';
@@ -60,10 +62,17 @@ function try_getDecks() {
             console.log("Ping 2")
             const deckDiv = document.createElement('div');
             deckDiv.classList.add('deck');
-            deckDiv.textContent = deck;
+            deckDiv.textContent = deck; //deck name
             deckDiv.onclick = () => {
+                deck_temp_list.forEach((element) =>{
+                    if(deck == element.deck_name){
+                        temp_index = element.deck_id
+                    }
+                })
                 console.log(index);
-                openDeck(index);
+                console.log(deck);
+                console.log(temp_index)
+                openDeck(temp_index);
                 } 
             deckList.appendChild(deckDiv);
         });
@@ -192,7 +201,6 @@ function openDeck(index){
     store_deck_num = index
     console.log(store_deck_num)
     localStorage.setItem("store_index", store_deck_num)
-    console.log("Ping " + localStorage.getItem("store_index"))
 }
 
 // run

@@ -46,7 +46,7 @@ body.active-popup .container{
 
 body.active-popup .popup{
     width: 50vw;
-    height: 240px;
+    height: 380px;
     opacity: 1;
     margin-top: 0;
     transition: width 750ms ease-out 0ms,

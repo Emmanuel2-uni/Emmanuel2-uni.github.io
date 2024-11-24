@@ -73,6 +73,7 @@ function try_getDecks() {
                 console.log(deck);
                 console.log(temp_index)
                 openDeck(temp_index);
+                window.open('https://emmanuel2-uni.github.io/deckViewer.html', '_blank')
                 } 
             deckList.appendChild(deckDiv);
         });
